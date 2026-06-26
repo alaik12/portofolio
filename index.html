@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <!-- =======================================================
+       Basic Meta
+  ======================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Al Aik Kustian | Web Portfolio</title>
+
+  <meta name="description"
+        content="Portofolio resmi Al Aik Kustian, Web Developer lulusan SMK Rekayasa Perangkat Lunak dengan pengalaman membangun website modern, responsif, dan fungsional menggunakan HTML, CSS, JavaScript, PHP, MySQL, dan Tailwind CSS.">
+
+  <meta name="author" content="Al Aik Kustian">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1b1e23">
+
+  <!-- Canonical -->
+  <link rel="canonical"
+        href="https://alaikkustian.github.io/portfolio/">
+
+  <!-- =======================================================
+       Open Graph (Facebook, LinkedIn, Discord, WhatsApp)
+  ======================================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+
+  <meta property="og:title"
+        content="Al Aik Kustian | Web Portfolio">
+
+  <meta property="og:description"
+        content="Personal Portfolio Website milik Al Aik Kustian. Berisi profil, keahlian, pengalaman PKL, proyek, dan informasi kontak.">
+
+  <meta property="og:url"
+        content="https://alaikkustian.github.io/portfolio/">
+
+  <meta property="og:site_name"
+        content="Al Aik Kustian Portfolio">
+
+  <meta property="og:image"
+        content="https://alaikkustian.github.io/portfolio/assets/image/preview.png">
+
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- =======================================================
+       Twitter / X Card
+  ======================================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title"
+        content="Al Aik Kustian | Portfolio">
+
+  <meta name="twitter:description"
+        content="Personal Portfolio Website milik Al Aik Kustian.">
+
+  <meta name="twitter:image"
+        content="https://alaikkustian.github.io/portfolio/assets/image/preview.png">
+
+  <!-- =======================================================
+       Favicon
+  ======================================================== -->
+  <link rel="icon"
+        type="image/png"
+        href="assets/image/favicon.png">
+
+  <!-- =======================================================
+       Google Fonts
+  ======================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <!-- =======================================================
+       Tailwind CSS (CDN)
+       NOTE:
+       Untuk production sebaiknya menggunakan Tailwind CLI.
+  ======================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: '#1b1e23',
+            surface: '#2c3039',
+            surfaceLight: '#363b47',
+            muted: '#6b7280',
+            light: '#e5e7eb',
+            accent: '#8b9cf7',
+            accentDark: '#6b7be0',
+            border: 'rgba(255,255,255,0.08)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- =======================================================
+       CSS
+  ======================================================== -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- =======================================================
+       Iconify
+  ======================================================== -->
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+</head>
+
+<body class="bg-base text-light antialiased overflow-x-hidden">
+
+  <!-- Cursor Glow -->
+  <div id="cursorGlow" class="cursor-glow hidden lg:block"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
+          <span class="text-accent font-semibold text-sm">A</span>
+        </div>
+        <span class="text-light font-medium text-sm tracking-tight">Al Aik Kustian</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm text-muted hover:text-light transition-colors duration-300">Tentang</a>
+        <a href="#skills" class="nav-link text-sm text-muted hover:text-light transition-colors duration-300">Keahlian</a>
+        <a href="#projects" class="nav-link text-sm text-muted hover:text-light transition-colors duration-300">Proyek</a>
+        <a href="#contact" class="nav-link text-sm text-muted hover:text-light transition-colors duration-300">Kontak</a>
+        <a href="#contact" class="magnetic-btn ml-2 px-5 py-2 bg-accent text-base text-xs font-semibold rounded-lg tracking-wide">
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-border hover:border-accent/30 transition-colors" aria-label="Menu">
+        <span class="iconify text-light text-xl" data-icon="lucide:menu" id="menuIcon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-base/98 backdrop-blur-xl flex flex-col items-center justify-center gap-8">
+    <a href="#about" class="mobile-link text-2xl font-light text-light hover:text-accent transition-colors">Tentang</a>
+    <a href="#skills" class="mobile-link text-2xl font-light text-light hover:text-accent transition-colors">Keahlian</a>
+    <a href="#projects" class="mobile-link text-2xl font-light text-light hover:text-accent transition-colors">Proyek</a>
+    <a href="#contact" class="mobile-link text-2xl font-light text-light hover:text-accent transition-colors">Kontak</a>
+    <a href="#contact" class="mt-4 px-8 py-3 bg-accent text-base font-semibold rounded-lg text-sm">Hubungi Saya</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center noise-overlay">
+    <!-- Decorative elements -->
+    <div class="absolute top-1/4 right-1/4 w-72 h-72 rounded-full bg-accent/5 blur-3xl"></div>
+    <div class="absolute bottom-1/3 left-1/6 w-56 h-56 rounded-full bg-surface/60 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 w-full pt-20 pb-12">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Content -->
+        <div>
+          <div class="animate-fade-up">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-surface/50 backdrop-blur-sm mb-8">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+              <span class="text-xs text-muted font-medium">Tersedia untuk proyek baru</span>
+            </div>
+          </div>
+
+          <h1 class="animate-fade-up delay-100 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.08] mb-6">
+            Halo, saya<br>
+            <span class="gradient-text">Al Aik Kustian</span>
+          </h1>
+
+          <p class="animate-fade-up delay-200 text-base sm:text-lg text-muted font-light leading-relaxed max-w-lg mb-10">
+            Lulusan <span class="text-light/80">SMK Rekayasa Perangkat Lunak</span> dengan <span class="text-light/80">Pengalaman Praktik Kerja Lapangan (PKL) di CV Generasi Media</span> Memiliki minat pada pengembangan website, desain antarmuka, dan pengelolaan data.
+          </p>
+
+          <div class="animate-fade-up delay-300 flex flex-wrap gap-4">
+            <a href="#projects" class="magnetic-btn inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-base text-sm font-semibold rounded-xl tracking-wide">
+              Lihat Karya
+              <span class="iconify text-base" data-icon="lucide:arrow-down-right"></span>
+            </a>
+            <a href="assets/cv/Alaik Kustian_KitaLulusCV.pdf" download class="inline-flex items-center gap-2 px-7 py-3.5 border border-border text-light text-sm font-medium rounded-xl hover:border-accent/30 hover:bg-surface/50 transition-all duration-300">
+              <span class="iconify text-base" data-icon="lucide:download"></span>
+              Unduh CV
+            </a>
+          </div>
+
+          <!-- Social -->
+          <div class="animate-fade-up delay-400 flex items-center gap-5 mt-12">
+            <span class="text-xs text-muted/60 uppercase tracking-widest font-semibold">Ikuti</span>
+            <div class="w-8 h-px bg-border"></div>
+            <a href="https://github.com/alaik12" class="text-muted hover:text-accent transition-colors duration-300" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <span class="iconify text-lg" data-icon="lucide:github"></span>
+            </a>
+            <a href="https://facebook.com/agniibey.mdv.7" class="text-muted hover:text-accent transition-colors duration-300" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <span class="iconify text-lg" data-icon="lucide:facebook"></span>
+            </a>
+            <a href="https://instagram.com/alaikkustian" class="text-muted hover:text-accent transition-colors duration-300" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <span class="iconify text-lg" data-icon="lucide:instagram"></span>
+            </a>
+            <a href="#" class="text-muted hover:text-accent transition-colors duration-300" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+              <span class="iconify text-lg" data-icon="lucide:twitter"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Photo / Visual -->
+        <div class="animate-scale-in delay-300 flex justify-center">
+          <div class="relative">
+            <!-- Photo frame -->
+            <div class="w-80 h-96 rounded-3xl overflow-hidden border border-border bg-surface animate-float">
+              <img src="assets/image/aikmod2.png" alt="Al aik kustian" class="w-full h-full object-cover">
+            </div>
+            <!-- Floating card -->
+            <div class="absolute -bottom-6 -left-10 px-5 py-3.5 rounded-2xl bg-surface border border-border shadow-xl" style="animation: float 4s ease-in-out 1s infinite;">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-accent/15 flex items-center justify-center">
+                  <span class="iconify text-accent text-lg" data-icon="lucide:briefcase"></span>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-light">4+ Website</p>
+                  <p class="text-[10px] text-muted">Dipublikasikan</p>
+                </div>
+              </div>
+            </div>
+            <!-- Floating card 2 -->
+            <div class="absolute -top-4 -right-8 px-4 py-3 rounded-2xl bg-surface border border-border shadow-xl" style="animation: float 4s ease-in-out 0.5s infinite;">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-green-500/15 flex items-center justify-center">
+                  <span class="iconify text-green-400 text-sm" data-icon="lucide:check-circle-2"></span>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-light">4+ Proyek</p>
+                  <p class="text-[10px] text-muted">Dikerjakan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="animate-fade-in delay-700 absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span class="text-[10px] text-muted/50 uppercase tracking-[0.2em] font-semibold">Scroll</span>
+        <div class="w-5 h-8 rounded-full border border-muted/20 flex justify-center pt-1.5">
+          <div class="w-1 h-2 rounded-full bg-muted/40 animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="relative py-24 lg:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-5 gap-16 items-start">
+        <!-- Label -->
+        <div class="lg:col-span-2 reveal-left">
+          <span class="text-xs font-semibold text-accent uppercase tracking-[0.15em]">Tentang Saya</span>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mt-4 leading-tight">
+            Membangun solusi web yang fungsional<br>
+            <span class="text-muted">dan responsif</span>
+          </h2>
+        </div>
+
+        <!-- Content -->
+        <div class="lg:col-span-3 reveal" style="transition-delay: 0.15s;">
+          <p class="text-muted leading-relaxed mb-6">
+            Saya adalah seorang Web Developer dengan pengalaman magang selama 4 bulan yang berfokus pada pengembangan aplikasi web berbasis PHP. Selama masa PKL, saya dipercaya untuk menangani siklus pengembangan web dari hulu ke hilir, mulai dari perancangan visual seperti desain banner halaman, implementasi frontend dan backend, hingga pengelolaan entry data.
+          </p>
+          <p class="text-muted leading-relaxed mb-10">
+            Dengan pendekatan yang fleksibel dan adaptif, saya telah berhasil berkontribusi dalam pembuatan dan publikasi 4 website aktif, termasuk platform digital untuk dealer otomotif terkemuka. Saya selalu bersemangat untuk mempelajari teknologi baru dan siap memberikan kontribusi terbaik di industri teknologi.
+          </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6">
+            <div class="p-5 rounded-2xl bg-surface/50 border border-border">
+              <p class="text-2xl sm:text-3xl font-semibold text-light counter" data-target="4">0</p>
+              <p class="text-xs text-muted mt-1">Proyek Dikembangkan</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-surface/50 border border-border">
+              <p class="text-2xl sm:text-3xl font-semibold text-light counter" data-target="4">0</p>
+              <p class="text-xs text-muted mt-1">Website Live / Rilis</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-surface/50 border border-border">
+              <p class="text-2xl sm:text-3xl font-semibold text-light counter" data-target="3">0</p>
+              <p class="text-xs text-muted mt-1">Bulan pengalaman PKL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="relative py-24 lg:py-32">
+    <div class="absolute inset-0 bg-surface/40"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-semibold text-accent uppercase tracking-[0.15em]">Keahlian</span>
+        <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mt-4">
+          Apa yang saya <span class="text-muted">kuasai</span>
+        </h2>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Skill Card 1 -->
+        <div class="reveal p-7 rounded-2xl bg-base border border-border hover:border-accent/20 transition-all duration-400 group" style="transition-delay: 0.05s;">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <span class="iconify text-accent text-xl" data-icon="lucide:code-2"></span>
+          </div>
+          <h3 class="text-lg font-medium tracking-tight mb-2">Web Development</h3>
+          <p class="text-sm text-muted leading-relaxed mb-6">Mengembangkan aplikasi web yang dinamis dari sisi frontend hingga backend menggunakan bahasa pemrograman PHP, memastikan sistem berjalan dengan fungsional dan terstruktur.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">PHP</span>
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Mysql</span>
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Fullstack E-Commerce/Dealer</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 2 -->
+        <div class="reveal p-7 rounded-2xl bg-base border border-border hover:border-accent/20 transition-all duration-400 group" style="transition-delay: 0.15s;">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <span class="iconify text-accent text-xl" data-icon="lucide:palette"></span>
+          </div>
+          <h3 class="text-lg font-medium tracking-tight mb-2">Web & Graphic Design</h3>
+          <p class="text-sm text-muted leading-relaxed mb-6">Merancang tata letak halaman web serta memproduksi aset visual kreatif seperti banner promosi untuk meningkatkan daya tarik estetika dan fungsionalitas media digital.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Banner Design</span>
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Web Asset</span>
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">UI Layout</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 3 -->
+        <div class="reveal p-7 rounded-2xl bg-base border border-border hover:border-accent/20 transition-all duration-400 group" style="transition-delay: 0.25s;">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <span class="iconify text-accent text-xl" data-icon="lucide:check-circle-2"></span>
+          </div>
+          <h3 class="text-lg font-medium tracking-tight mb-2">Data & Content Management</h3>
+          <p class="text-sm text-muted leading-relaxed mb-6">Melakukan manajemen dan entry data produk secara akurat ke dalam sistem website, memastikan seluruh konten yang dipublikasikan valid dan siap diakses oleh pengguna.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Data Entry</span>
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Content Update</span>
+            <span class="tag-hover px-2.5 py-1 text-[11px] rounded-md border border-border text-muted cursor-default">Quality Control</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 
+      <div class="mt-16 grid md:grid-cols-2 gap-x-12 gap-y-6 reveal" style="transition-delay: 0.2s;">
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">Figma</span>
+            <span class="text-xs text-muted">95%</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-surface overflow-hidden">
+            <div class="skill-fill h-full rounded-full bg-gradient-to-r from-accent to-accent/70" data-width="95%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">React / Next.js</span>
+            <span class="text-xs text-muted">90%</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-surface overflow-hidden">
+            <div class="skill-fill h-full rounded-full bg-gradient-to-r from-accent to-accent/70" data-width="90%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">Tailwind CSS</span>
+            <span class="text-xs text-muted">92%</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-surface overflow-hidden">
+            <div class="skill-fill h-full rounded-full bg-gradient-to-r from-accent to-accent/70" data-width="92%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">TypeScript</span>
+            <span class="text-xs text-muted">85%</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-surface overflow-hidden">
+            <div class="skill-fill h-full rounded-full bg-gradient-to-r from-accent to-accent/70" data-width="85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>Bars -->
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="relative py-24 lg:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 gap-4 reveal">
+        <div>
+          <span class="text-xs font-semibold text-accent uppercase tracking-[0.15em]">Proyek Terpilih</span>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mt-4">
+            Karya <span class="text-muted">terbaru</span>
+          </h2>
+        </div>
+        <a href="https://github.com/alaik12" class="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+          Lihat semua
+          <span class="iconify" data-icon="lucide:arrow-right"></span>
+        </a>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Project 1 -->
+        <div class="project-card reveal-scale rounded-2xl bg-surface border border-border overflow-hidden" style="transition-delay: 0.05s;">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="assets/image/nisnis.png" alt="indomobi lnissan tasikmalaya" class="project-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-accent/10 text-accent">PHP</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">Web Dealer</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">Frontend & Backend</span>
+            </div>
+            <h3 class="text-lg font-medium tracking-tight mb-2">Indomobil Nissan Tasikmalaya</h3>
+            <p class="text-sm text-muted leading-relaxed mb-5">Pengembangan website resmi dealer Nissan Tasikmalaya untuk mempermudah calon pelanggan dalam menjelajahi katalog mobil, melakukan booking servis, dan berinteraksi langsung dengan pihak sales.</p>
+            <a href="https://www.nissantasikmalaya.id/" class="inline-flex items-center gap-2 text-sm text-accent hover:text-accentDark transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              Lihat detail
+              <span class="iconify project-arrow transition-transform duration-300" data-icon="lucide:arrow-right"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal-scale rounded-2xl bg-surface border border-border overflow-hidden" style="transition-delay: 0.15s;">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="assets/image/citcit.png" alt="E-Commerce Project" class="project-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-accent/10 text-accent">PHP</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">Automotive Web</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">Banner Design</span>
+            </div>
+            <h3 class="text-lg font-medium tracking-tight mb-2">Indomobil Citroen Tasikmalaya</h3>
+            <p class="text-sm text-muted leading-relaxed mb-5">Membangun platform informasi digital untuk lini mobil Citroën di wilayah Tasikmalaya. Berperan aktif dalam implementasi fitur fungsional serta merancang aset banner yang estetik di halaman utama.</p>
+            <a href="https://www.citroentasikmalaya.com/" class="inline-flex items-center gap-2 text-sm text-accent hover:text-accentDark transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              Lihat detail
+              <span class="iconify project-arrow transition-transform duration-300" data-icon="lucide:arrow-right"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal-scale rounded-2xl bg-surface border border-border overflow-hidden" style="transition-delay: 0.25s;">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="assets/image/emot.png" alt="Health App Project" class="project-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-accent/10 text-accent">PHP</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">Electric Vehicle</span>
+            </div>
+            <h3 class="text-lg font-medium tracking-tight mb-2">Indomobil E-Motor Tasikmalaya</h3>
+            <p class="text-sm text-muted leading-relaxed mb-5">Pembuatan website dealer kendaraan listrik (E-Motor) guna mendukung publikasi produk ramah lingkungan. Berfokus pada pengelolaan entri data produk secara presisi dan optimasi tampilan antarmuka.</p>
+            <a href="https://www.indomobilemotortasik.com/" class="inline-flex items-center gap-2 text-sm text-accent hover:text-accentDark transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              Lihat detail
+              <span class="iconify project-arrow transition-transform duration-300" data-icon="lucide:arrow-right"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal-scale rounded-2xl bg-surface border border-border overflow-hidden" style="transition-delay: 0.35s;">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="assets/image/orch.png" alt="SaaS Project" class="project-img w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-accent/10 text-accent">PHP</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">Web Application</span>
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-surfaceLight/50 text-muted">E-Commerce</span>
+            </div>
+            <h3 class="text-lg font-medium tracking-tight mb-2">Orchellia</h3>
+            <p class="text-sm text-muted leading-relaxed mb-5">Berpartisipasi dalam tim pengembang untuk menyelesaikan website Orchellia menggunakan bahasa pemrograman PHP. Memastikan performa web responsif dan seluruh konten digital terintegrasi dengan baik.</p>
+            <a href="https://www.orchellia.com/" class="inline-flex items-center gap-2 text-sm text-accent hover:text-accentDark transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              Lihat detail
+              <span class="iconify project-arrow transition-transform duration-300" target="_blank" rel="noopener noreferrer" data-icon="lucide:arrow-right"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials 
+  <section class="relative py-24 lg:py-32">
+    <div class="absolute inset-0 bg-surface/40"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs font-semibold text-accent uppercase tracking-[0.15em]">Testimoni</span>
+        <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mt-4">
+          Apa kata <span class="text-muted">mereka</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">-->
+        <!-- Testimonial 1 
+        <div class="reveal p-7 rounded-2xl bg-base border border-border" style="transition-delay: 0.05s;">
+          <div class="flex gap-1 mb-5">
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+          </div>
+          <p class="text-sm text-muted leading-relaxed mb-6">"Andi berhasil mentransformasi visi kami menjadi produk digital yang luar biasa. Kreativitas dan perhatiannya terhadap detail sangat impresif."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface">
+              <img src="https://picsum.photos/seed/person1/80/80.jpg" alt="Sarah" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-sm font-medium">Sarah Wijaya</p>
+              <p class="text-xs text-muted">CEO, TechStart</p>
+            </div>
+          </div>
+        </div>-->
+
+        <!-- Testimonial 2 
+        <div class="reveal p-7 rounded-2xl bg-base border border-border" style="transition-delay: 0.15s;">
+          <div class="flex gap-1 mb-5">
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+          </div>
+          <p class="text-sm text-muted leading-relaxed mb-6">"Kolaborasi yang menyenangkan. Andi selalu responsif dan memberikan solusi kreatif untuk setiap tantangan desain yang kami hadapi."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface">
+              <img src="https://picsum.photos/seed/person2/80/80.jpg" alt="Budi" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-sm font-medium">Budi Santoso</p>
+              <p class="text-xs text-muted">PM, Digital Corp</p>
+            </div>
+          </div>
+        </div>-->
+
+        <!-- Testimonial 3 
+        <div class="reveal p-7 rounded-2xl bg-base border border-border" style="transition-delay: 0.25s;">
+          <div class="flex gap-1 mb-5">
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+            <span class="iconify text-yellow-400 text-sm" data-icon="lucide:star"></span>
+          </div>
+          <p class="text-sm text-muted leading-relaxed mb-6">"Hasil kerjanya melebihi ekspektasi. Conversion rate kami meningkat 40% setelah redesign oleh Andi. Sangat merekomendasikan!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface">
+              <img src="https://picsum.photos/seed/person3/80/80.jpg" alt="Maya" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-sm font-medium">Maya Putri</p>
+              <p class="text-xs text-muted">CMO, EcomHub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-24 lg:py-32">
+    <div class="absolute inset-0 bg-surface/40"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Left -->
+        <div class="reveal-left">
+          <span class="text-xs font-semibold text-accent uppercase tracking-[0.15em]">Kontak</span>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mt-4 mb-6 leading-tight">
+            Mari wujudkan<br>
+            <span class="text-muted">ide Anda</span>
+          </h2>
+          <p class="text-muted leading-relaxed mb-10">
+            Punya proyek menarik atau ingin berkolaborasi? Saya selalu terbuka untuk diskusi tentang desain, teknologi, data entry, atau peluang baru.
+          </p>
+
+          <!-- Contact Info -->
+          <div class="space-y-5">
+            <a href="mailto:alaikkustian@gmail.com" class="flex items-center gap-4 group">
+              <div class="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors duration-300">
+                <span class="iconify text-muted group-hover:text-accent transition-colors duration-300" data-icon="lucide:mail"></span>
+              </div>
+              <div>
+                <p class="text-xs text-muted mb-0.5">Email</p>
+                <p class="text-sm font-medium group-hover:text-accent transition-colors duration-300">alaikkustian@gmail.com</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 group">
+              <div class="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors duration-300">
+                <span class="iconify text-muted group-hover:text-accent transition-colors duration-300" data-icon="lucide:phone"></span>
+              </div>
+              <div>
+                <p class="text-xs text-muted mb-0.5">Telepon</p>
+                <p class="text-sm font-medium group-hover:text-accent transition-colors duration-300">+62 895 3237 39800</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 group">
+              <div class="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors duration-300">
+                <span class="iconify text-muted group-hover:text-accent transition-colors duration-300" data-icon="lucide:map-pin"></span>
+              </div>
+              <div>
+                <p class="text-xs text-muted mb-0.5">Lokasi</p>
+                <p class="text-sm font-medium group-hover:text-accent transition-colors duration-300">Jawa Barat, Indonesia</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="reveal" style="transition-delay: 0.15s;">
+          <form id="contactForm" class="p-7 sm:p-8 rounded-2xl bg-surface border border-border space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Nama</label>
+                <input type="text" name="name" required placeholder="Nama lengkap" class="w-full px-4 py-3 rounded-xl bg-base border border-border text-sm text-light placeholder:text-muted/50 focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all duration-300">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Email</label>
+                <input type="email" name="email" required placeholder="contoh@gmail.com" class="w-full px-4 py-3 rounded-xl bg-base border border-border text-sm text-light placeholder:text-muted/50 focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all duration-300">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Subjek</label>
+              <input type="text" name="subject" required placeholder="Tentang apa?" class="w-full px-4 py-3 rounded-xl bg-base border border-border text-sm text-light placeholder:text-muted/50 focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all duration-300">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Pesan</label>
+              <textarea name="message" rows="5" required placeholder="Ceritakan tentang proyek Anda..." class="w-full px-4 py-3 rounded-xl bg-base border border-border text-sm text-light placeholder:text-muted/50 focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all duration-300 resize-none"></textarea>
+            </div>
+            <button type="submit" class="magnetic-btn w-full py-3.5 bg-accent text-base text-sm font-semibold rounded-xl tracking-wide flex items-center justify-center gap-2">
+              <span id="btnText">Kirim Pesan</span>
+              <span class="iconify" data-icon="lucide:send" id="btnIcon"></span>
+              <span id="btnLoader" class="hidden w-4 h-4 border-2 border-base/30 border-t-base rounded-full animate-spin"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-border py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
+            <span class="text-accent font-semibold text-xs">A</span>
+          </div>
+          <span class="text-sm text-muted">© 2026 Al Aik Kustian</span>
+        </div>
+
+        <!-- Social -->
+        <div class="flex items-center gap-5">
+          <a href="https://github.com/alaik12" class="text-muted hover:text-accent transition-colors duration-300" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <span class="iconify text-lg" data-icon="lucide:github"></span>
+          </a>
+          <a href="https://facebook.com/agniibey.mdv.7" class="text-muted hover:text-accent transition-colors duration-300" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <span class="iconify text-lg" data-icon="lucide:facebook"></span>
+          </a>
+          <a href="https://instagram.com/alaikkustian" class="text-muted hover:text-accent transition-colors duration-300" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <span class="iconify text-lg" data-icon="lucide:instagram"></span>
+          </a>
+          <a href="#" class="text-muted hover:text-accent transition-colors duration-300" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+            <span class="iconify text-lg" data-icon="lucide:twitter"></span>
+          </a>
+        </div>
+
+        <!-- Back to top -->
+        <a href="#hero" class="flex items-center gap-2 text-xs text-muted hover:text-accent transition-colors duration-300">
+          Kembali ke atas
+          <span class="iconify" data-icon="lucide:arrow-up"></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast fixed bottom-6 right-6 z-50 px-5 py-3.5 rounded-xl bg-surface border border-accent/30 shadow-2xl flex items-center gap-3 pointer-events-none">
+    <div class="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+      <span class="iconify text-accent" data-icon="lucide:check"></span>
+    </div>
+    <div>
+      <p class="text-sm font-medium text-light">Pesan terkirim!</p>
+      <p class="text-xs text-muted">Tungguin yaa. Saya orangnya fast respond kok</p>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/contact.js"></script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html> 

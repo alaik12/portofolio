@@ -1,0 +1,43 @@
+/* ==========================================================
+   PORTFOLIO WEBSITE
+   Author : Al Aik Kustian
+   File   : style.css
+   Desc   : Global Style
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-family:'Inter',sans-serif;
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-track{
+    background:#1b1e23;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2c3039;
+    border-radius:3px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#363b47;
+}
